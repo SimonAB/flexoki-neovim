@@ -3,6 +3,14 @@ Neovim adaptation of [Flexoki](https://stephango.com/flexoki) by Steph Ango.
 
 This repository is a fork of [`kepano/flexoki-neovim`](https://github.com/kepano/flexoki-neovim).
 
+## Table of contents
+
+- [What this fork adds](#what-this-fork-adds)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Setup options](#setup-options)
+- [Raycast themes](#raycast-themes)
+
 ## What this fork adds
 
 This fork keeps the upstream theme intact, but adds a few practical options that
