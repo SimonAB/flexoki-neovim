@@ -20,7 +20,7 @@ To install simply add via your plugin manager and call the theme
 
 ```lua
 require("lazy").setup({
-  { 'kepano/flexoki-neovim', name = 'flexoki' }
+  { 'SimonAB/flexoki-neovim', name = 'flexoki' }
 })
 ```
 
@@ -28,7 +28,7 @@ require("lazy").setup({
 
 ```lua
 require('packer').startup(function(use)
-  use({ 'kepano/flexoki-neovim', as = 'flexoki' })
+  use({ 'SimonAB/flexoki-neovim', as = 'flexoki' })
 end)
 ```
 
@@ -36,11 +36,29 @@ end)
 
 ```lua
 require('paq')({
-  { 'kepano/flexoki-neovim', as = 'flexoki' }
+  { 'SimonAB/flexoki-neovim', as = 'flexoki' }
 })
 ```
 
 ## Usage
+
+### Setup options
+
+```lua
+require("flexoki").setup({
+  -- Light variant to use when `variant = "auto"` and `background=light`
+  light_variant = "light_high_contrast",
+
+  -- Transparent UI surfaces (useful with a transparent terminal backdrop)
+  transparent = {
+    editor = true,       -- Normal/editor background
+    floats = true,       -- NormalFloat/FloatTitle
+    float_border = true, -- FloatBorder
+    ui = true,           -- MsgArea/ModeMsg/MsgSeparator
+    menus = true,        -- Pmenu
+  },
+})
+```
 
 * Dark
 
