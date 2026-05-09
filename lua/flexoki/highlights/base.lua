@@ -5,6 +5,7 @@ local M = {}
 
 M.groups = function()
 	local c = palette.palette()
+	local transparent = config.options.transparent or {}
 
 	local floatBg = 'bg'
 	local floatBorderBg = 'bg'
@@ -25,8 +26,8 @@ M.groups = function()
 
 	--- @type table<string, vim.api.keyset.highlight>
 	return {
-		["Normal"]     = { fg = c['tx'], bg = c['bg'] },
-		["NormalNC"]   = { fg = 'NONE',  bg = 'NONE' },
+		["Normal"]     = { fg = c['tx'], bg = (transparent.editor and 'NONE' or c['bg']) },
+		["NormalNC"]   = { fg = 'NONE',  bg = (transparent.editor and 'NONE' or 'NONE') },
 		["Underlined"] = { fg = 'NONE',  bg = 'NONE', underline = true, },
 		["Bold"]       = { fg = 'NONE',  bg = 'NONE', bold      = true, },
 		["Italic"]     = { fg = 'NONE',  bg = 'NONE', italic    = true, },
@@ -64,7 +65,8 @@ M.groups = function()
 		["Function"]   = { fg = c['or'], bg = 'NONE' },
 
 		["Keyword"]     = { fg   = c['gr'],   bg   = 'NONE' },
-		["Statement"]   = { fg   = 'NONE',    bg = 'NONE'   },
+		-- Keep `Statement` visible: many syntax scripts (incl. VimTeX) link core items to it.
+		["Statement"]   = { link = 'Keyword'                },
 		["Conditional"] = { link = 'Keyword'                },
 		["Repeat"]      = { link = 'Keyword'                },
 		["Label"]       = { link = 'Keyword'                },
@@ -93,14 +95,14 @@ M.groups = function()
 
 		--#endregion
 
-		["SignColumn"]     = { fg = 'NONE',          bg = 'NONE' },
+		["SignColumn"]     = { fg = 'NONE',          bg = (transparent.editor and 'NONE' or 'NONE') },
 
-		["MsgArea"]        = { fg = 'NONE',          bg = c['bg-2'] },
-		["ModeMsg"]        = { fg = 'NONE',          bg = c['bg-2'] },
-		["MsgSeparator"]   = { fg = 'NONE',          bg = c['bg-2'] },
+		["MsgArea"]        = { fg = 'NONE',          bg = (transparent.ui and 'NONE' or c['bg-2']) },
+		["ModeMsg"]        = { fg = 'NONE',          bg = (transparent.ui and 'NONE' or c['bg-2']) },
+		["MsgSeparator"]   = { fg = 'NONE',          bg = (transparent.ui and 'NONE' or c['bg-2']) },
 
 		-- Pop-up menu
-		["Pmenu"]      = { fg = c['tx-2'], bg = c['bg-2'], sp = 'NONE', blend = 50, },
+		["Pmenu"]      = { fg = c['tx-2'], bg = (transparent.menus and 'NONE' or c['bg-2']), sp = 'NONE', blend = (transparent.menus and nil or 50), },
 		["PmenuSel"]   = { fg = c['tx'],   bg = c['cy-2'] },
 		["PmenuSbar"]  = { fg = 'NONE',    bg = c['ui']   },
 		["PmenuThumb"] = { fg = 'NONE',    bg = c['ui-3'] },
@@ -117,8 +119,9 @@ M.groups = function()
 		["WinBar"]   = { fg = c['tx'],   bg = c['ui-3'] },
 		["WinBarNC"] = { fg = c['tx-2'], bg = c['ui']   },
 
-		["NormalFloat"]    = { fg = c['tx-2'], bg = c[floatBg],      },
-		["FloatBorder"]    = { fg = c['tx-3'], bg = c[floatBorderBg] },
+		["NormalFloat"]    = { fg = c['tx-2'], bg = (transparent.floats and 'NONE' or c[floatBg]) },
+		["FloatBorder"]    = { fg = c['tx-3'], bg = (transparent.float_border and 'NONE' or c[floatBorderBg]) },
+		["FloatTitle"]     = { fg = c['tx'],   bg = (transparent.floats and 'NONE' or c[floatBg]) },
 
 		["WildMenu"]       = { fg = 'NONE',    bg = c['cy-2']     },
 		["Folded"]         = { fg = c['ui-2'], bg = c['alt_bg']   },

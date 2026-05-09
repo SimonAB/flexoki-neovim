@@ -1,7 +1,14 @@
----@alias Variant 'dark' | 'light'
+---@alias Variant 'dark' | 'light' | 'light_high_contrast'
 ---@alias FloatWindowStyle 'auto' | 'border' | 'solid' | 'borderless'
 
 local M = {}
+
+---@class FlexokiTransparentOptions
+---@field editor boolean|nil When true, make core editor surfaces transparent (`Normal`, etc.)
+---@field floats boolean|nil When true, make float body/title surfaces transparent (`NormalFloat`, `FloatTitle`)
+---@field float_border boolean|nil When true, make float border surface transparent (`FloatBorder`)
+---@field ui boolean|nil When true, make message/status UI surfaces transparent (`MsgArea`, etc.)
+---@field menus boolean|nil When true, make completion / popup-menu surfaces transparent (`Pmenu`, etc.)
 
 ---@class FlexokiOptions
 M.options = {
@@ -27,6 +34,10 @@ M.options = {
 	---applying the colorscheme to decide
 	---@type FloatWindowStyle?
 	float_window_style = 'auto',
+
+	---Make selected UI surfaces transparent by setting their background to `none`.
+	---@type FlexokiTransparentOptions?
+	transparent = {},
 
 	---@type table<string, vim.api.keyset.highlight>?
 	highlight_groups = {},

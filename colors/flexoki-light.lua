@@ -1,2 +1,5 @@
 local flexoki = require('flexoki')
-flexoki.colorscheme({ variant = 'light' })
+local config = require('flexoki.config')
+
+local variant = config.options.light_variant or 'light'
+flexoki.colorscheme({ variant = variant })
