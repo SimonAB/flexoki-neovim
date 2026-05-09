@@ -74,6 +74,13 @@ require("flexoki").setup({
 })
 ```
 
+## Raycast themes
+
+Flexoki-inspired Raycast themes (shared via `themes.ray.so`):
+
+- Dark: `https://themes.ray.so?version=1&name=Flexoki%20Dark&author=Simon&authorUsername=S_A_B&colors=%23100F0F,%231C1B1A,%23CECDC3,%234385BE,%234385BE,%23BC3800,%23DA702C,%23D0A215,%23879A39,%233AA99F,%238B7EC8,%23CE5D97&appearance=dark&addToRaycast`
+- Light: `https://themes.ray.so?version=1&name=Flexoki%20Light&author=Simon&authorUsername=S_A_B&colors=%23FFFCF0,%23F2F0E5,%23100F0F,%23205EA6,%23205EA6,%23912C00,%23BC5215,%23AD8301,%2366800B,%2324837B,%235E409D,%23A02F6F&appearance=light&addToRaycast`
+
 * Dark
 
 ```lua

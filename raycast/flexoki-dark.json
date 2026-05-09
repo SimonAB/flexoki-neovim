@@ -1,0 +1,21 @@
+{
+  "author": "Simon",
+  "authorUsername": "S_A_B",
+  "version": "1",
+  "name": "Flexoki Dark",
+  "appearance": "dark",
+  "colors": {
+    "background": "#100F0F",
+    "backgroundSecondary": "#1C1B1A",
+    "text": "#CECDC3",
+    "selection": "#4385BE",
+    "loader": "#4385BE",
+    "red": "#BC3800",
+    "orange": "#DA702C",
+    "yellow": "#D0A215",
+    "green": "#879A39",
+    "blue": "#3AA99F",
+    "purple": "#8B7EC8",
+    "magenta": "#CE5D97"
+  }
+}

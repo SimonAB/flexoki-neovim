@@ -1,0 +1,21 @@
+{
+  "author": "Simon",
+  "authorUsername": "S_A_B",
+  "version": "1",
+  "name": "Flexoki Light",
+  "appearance": "light",
+  "colors": {
+    "background": "#FFFCF0",
+    "backgroundSecondary": "#F2F0E5",
+    "text": "#100F0F",
+    "selection": "#205EA6",
+    "loader": "#205EA6",
+    "red": "#912C00",
+    "orange": "#BC5215",
+    "yellow": "#AD8301",
+    "green": "#66800B",
+    "blue": "#24837B",
+    "purple": "#5E409D",
+    "magenta": "#A02F6F"
+  }
+}
