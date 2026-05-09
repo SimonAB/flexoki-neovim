@@ -1,5 +1,7 @@
 # flexoki-neovim
-Neovim adaptation of [Flexoki](https://stephango.com/flexoki) by Steph Ango
+Neovim adaptation of [Flexoki](https://stephango.com/flexoki) by Steph Ango.
+
+This repository is a fork of [`kepano/flexoki-neovim`](https://github.com/kepano/flexoki-neovim).
 
 ## What this fork adds
 
