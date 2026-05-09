@@ -1,6 +1,18 @@
 # flexoki-neovim
 Neovim adaptation of [Flexoki](https://stephango.com/flexoki) by Steph Ango
 
+## What this fork adds
+
+This fork keeps the upstream theme intact, but adds a few practical options that
+are useful in real-world, transparent-terminal setups:
+
+- **Transparency controls**: `transparent = { editor, floats, float_border, ui, menus }`
+  to make common UI surfaces inherit your terminal backdrop.
+- **Light palette accessibility tweak**: `light_variant = "light_high_contrast"`
+  which darkens the most subtle text (`tx-3`) to improve readability in light mode.
+- **Variant-aware `flexoki-light`**: `:colorscheme flexoki-light` respects your configured
+  `light_variant`, so you can use `light_high_contrast` without switching scheme names.
+
 Currently still **work in progress** and missing support for even the most
 common plugins. This will be fixed shortly. If you are using a plugin that
 isn't supported please create an issue, or upvote an existing one, we will use
